@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <ul id="task-list">
+        <li class="task-item">Task 1</li>
+        <li class="task-item">Task 2</li>
+        <li class="task-item">Task 3</li>
+      </ul>
+      
+      <script>
+        const taskList = document.getElementById('task-list');
+      
+        taskList.addEventListener('click', function(event) {
+          if (event.target && event.target.classList.contains('task-item')) {
+            const taskItem = event.target;
+            console.log(`Task deleted: ${taskItem.textContent.trim()}`);
+            taskItem.remove();
+          }
+        });
+      </script>
+      
+      <!-- <ul id="task-list">
+        <li>Task 1 <button class="delete-btn">Delete</button></li>
+        <li>Task 2 <button class="delete-btn">Delete</button></li>
+        <li>Task 3 <button class="delete-btn">Delete</button></li>
+      </ul>
+      
+      <script>
+        const taskList = document.getElementById('task-list');
+      
+        taskList.addEventListener('click', function(event) {
+          if (event.target && event.target.classList.contains('delete-btn')) {
+            const taskItem = event.target.closest('li');
+            console.log(`Task deleted: ${taskItem.textContent.trim()}`);
+            taskItem.remove();
+          }
+        });
+      </script> -->
+
+
+
+
+
+
+      
+
+<!--      You are a developer building a task management application for a small business. The
+application features a list of tasks displayed as an unordered list (<ul>), where each task is an
+<li> element containing a "Delete" button. The client wants users to be able to remove tasks by
+clicking the corresponding "Delete" button, and they’ve asked for a confirmation in the console
+whenever a task is deleted. You’ve implemented a single event listener on the list container
+using event delegation to handle all delete actions efficiently. However, during testing, a team
+member noticed that clicking anywhere on the list (not just the buttons) also triggers a console
+message, and they’re worried this might confuse users or indicate a bug. Your task is to
+determine what happens when a "Delete" button is clicked versus when the list itself is clicked,
+and explain why the current implementation behaves this way.
+
+Hint:
+Consider how event delegation works in this setup. The event listener is attached to the <ul>
+element, so it captures all click events within its scope. Think about what event.target
+
+represents and how the event bubbles up from the clicked element to the listener. The condition
+inside the listener decides what action to take based on the clicked element’s class. -->
