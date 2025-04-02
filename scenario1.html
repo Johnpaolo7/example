@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Scenario 1</title>
+</head>
+<body>
+    <div id="Grandparent">
+        <div id="Parent">
+            <div id="Child">
+                <button class="btn">Click Me!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('Grandparent').addEventListener('click', function() {
+        console.log('Grandparent Clicked!');
+    }, true);
+
+    document.getElementById('Parent').addEventListener('click', function() {
+        console.log('Parent Clicked!');
+    }, true);
+
+    document.getElementById('Child').addEventListener('click', function() {
+        console.log('Child Clicked!');
+    }, true);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- You are a front-end developer working on an interactive webpage for a client. The webpage
+includes a nested structure of elements: a grandparent <div>, a parent <div>, and a child
+<button>.
+Each element has a click event listener attached to it, and the client has reported that when
+users click the "Click Me" button, the console logs messages in an order they don’t understand.
+They expected the button’s message ("Child Clicked!") to appear first, since it’s the element
+being clicked, but that’s not happening.
+Your task is to figure out what the console output will be when the button is clicked and
+determine why the events are firing in that specific order.
+The client needs a fix or an explanation by the end of the day.
+Hint:
+Pay attention to the argument in each addEventListener call—it’s set to true. This setting affects
+whether the event is processed during the capturing phase (top-down) or the bubbling phase
+(bottom-up). Consider the nesting of the elements and how the event flows through the DOM
+from the outermost to the innermost element. -->

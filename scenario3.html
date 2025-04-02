@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Capturing</title>
+</head>
+<body>
+    <div id="grandparent">
+        <div id="parent">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("grandparent").addEventListener("click", function() {console.log("Grandparent Clicked!")});
+        document.getElementById("parent").addEventListener("click", function() { console.log("Parent Clicked!")});
+        document.getElementById("child").addEventListener("click", function() { console.log("Child Clicked!")});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- You are a UI developer working on a dashboard for a company’s internal tool. The dashboard
+includes a nested structure: a grandparent <div> representing a section, a parent <div> for a
+subsection, and a child <button> that triggers an action. Each element has a click event listener
+attached to log a message, intended for debugging purposes during development. A colleague
+testing the dashboard reports that when they click the "Click Me" button, the console messages
+appear in an unexpected order—starting with "Grandparent Clicked!" instead of "Child
+Clicked!"—and they’re concerned this might affect the intended functionality. Your task is to
+predict the console output when the button is clicked and explain why the events fire in this
+particular sequence, so you can reassure your colleague or adjust the code if needed.
+
+Hint:
+Focus on the parameter (true) in each addEventListener call. This setting enables the capturing
+phase, which changes how events propagate through the DOM. Think about the hierarchy of
+the elements (grandparent → parent → child) and how the event flows from the outermost to the
+innermost element during this phase. -->
